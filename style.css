@@ -1,0 +1,804 @@
+/* Основные стили и сброс */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Основные цвета палитры Перми */
+    --perm-deep-blue: #1E3F66;      /* Кама */
+    --perm-copper: #B87333;         /* Медь */
+    --perm-dark-green: #2F4F4F;     /* Тайга */
+    --perm-earth-brown: #8B4513;    /* Почва */
+    --perm-soviet-red: #C8102E;     /* Советский период */
+    --perm-modern-aqua: #00B7EB;    /* Современность */
+    --perm-light-beige: #F5F5DC;    /* Фон */
+    --perm-dark-gray: #36454F;      /* Индустриальный */
+    --perm-light-gray: #D3D3D3;     /* Панельные дома */
+    --perm-gold: #D4AF37;           /* Золото купечества */
+    --perm-cream: #FFFDD0;          /* Снег */
+    --perm-modern-green: #4CAF50;   /* Современная зелень */
+    
+    --text-dark: #333333;
+    --text-light: #ffffff;
+    --shadow: rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: var(--text-dark);
+    background-color: var(--perm-light-beige);
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+
+.header {
+    position: relative;
+    height: 100vh;
+    min-height: 700px;
+    background: linear-gradient(rgba(30, 63, 102, 0.85), rgba(47, 79, 79, 0.8)), 
+                url('https://images.unsplash.com/photo-1590418606746-018840f9cd0f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-light);
+    overflow: hidden;
+}
+
+.header-content {
+    text-align: center;
+    max-width: 900px;
+    z-index: 2;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.main-title {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.title-line {
+    display: block;
+}
+
+.subtitle {
+    display: block;
+    font-size: 2rem;
+    font-weight: 400;
+    margin-top: 1rem;
+    color: var(--perm-cream);
+}
+
+.header-description-container {
+    max-width: 800px;
+    margin-top: 2rem;
+}
+
+.header-description {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+}
+
+.period-nav {
+    background-color: var(--perm-deep-blue);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.period-nav-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 15px 0;
+}
+
+.period-filter {
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    padding: 12px 25px;
+    margin: 5px 10px;
+    border-radius: 50px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 180px;
+    font-size: 1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.period-filter::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: currentColor;
+    opacity: 0.2;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+.period-filter:hover::before {
+    transform: scaleX(1);
+}
+
+.period-filter[data-period="all"] {
+    background-color: var(--perm-deep-blue);
+    border-color: var(--perm-deep-blue);
+}
+
+.period-filter[data-period="ancient"] {
+    background-color: var(--perm-earth-brown);
+    border-color: var(--perm-earth-brown);
+}
+
+.period-filter[data-period="imperial"] {
+    background-color: var(--perm-copper);
+    border-color: var(--perm-copper);
+}
+
+.period-filter[data-period="soviet"] {
+    background-color: var(--perm-soviet-red);
+    border-color: var(--perm-soviet-red);
+}
+
+.period-filter[data-period="modern"] {
+    background-color: var(--perm-modern-aqua);
+    border-color: var(--perm-modern-aqua);
+    color: var(--text-dark);
+}
+
+.period-filter.active {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+    transform: translateY(-2px);
+}
+
+.timeline-container {
+    padding: 120px 0 80px;
+    position: relative;
+}
+
+.timeline {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(to bottom, var(--perm-earth-brown), var(--perm-deep-blue), var(--perm-copper), var(--perm-soviet-red), var(--perm-modern-aqua));
+    border-radius: 2px;
+}
+
+.timeline.filter-ancient::before {
+    background: var(--perm-earth-brown);
+}
+
+.timeline.filter-imperial::before {
+    background: var(--perm-copper);
+}
+
+.timeline.filter-soviet::before {
+    background: var(--perm-soviet-red);
+}
+
+.timeline.filter-modern::before {
+    background: var(--perm-modern-aqua);
+}
+
+.timeline-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 80px;
+    position: relative;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.timeline-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.timeline-item:nth-child(odd) {
+    justify-content: flex-start;
+    padding-right: 50%;
+}
+
+.timeline-item:nth-child(even) {
+    justify-content: flex-end;
+    padding-left: 50%;
+}
+
+.timeline-content {
+    background-color: white;
+    border-radius: 12px;
+    padding: 30px;
+    width: 90%;
+    max-width: 450px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    position: relative;
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.timeline-content:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+}
+
+.timeline-item:nth-child(odd) .timeline-content::before {
+    content: '';
+    position: absolute;
+    right: -15px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 10px 0 10px 15px;
+}
+
+.timeline-item:nth-child(even) .timeline-content::before {
+    content: '';
+    position: absolute;
+    left: -15px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 10px 15px 10px 0;
+}
+
+.timeline-year {
+    position: absolute;
+    top: -25px;
+    font-weight: 700;
+    font-size: 1.2rem;
+    padding: 5px 15px;
+    border-radius: 20px;
+    color: white;
+    z-index: 1;
+}
+
+.timeline-item:nth-child(odd) .timeline-year {
+    right: -20px;
+}
+
+.timeline-item:nth-child(even) .timeline-year {
+    left: -20px;
+}
+
+.timeline-marker {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 4px solid white;
+    box-shadow: 0 0 0 4px;
+    z-index: 1;
+}
+
+.timeline-title {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: var(--perm-deep-blue);
+}
+
+.timeline-description {
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 15px;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.timeline-period {
+    display: inline-block;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.read-more {
+    color: var(--perm-deep-blue);
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    margin-top: 10px;
+    transition: var(--transition);
+}
+
+.read-more i {
+    margin-left: 5px;
+    transition: var(--transition);
+}
+
+.read-more:hover {
+    color: var(--perm-copper);
+}
+
+.read-more:hover i {
+    transform: translateX(5px);
+}
+
+.period-ancient .timeline-year,
+.period-ancient .timeline-marker {
+    background-color: var(--perm-earth-brown);
+    box-shadow: 0 0 0 4px var(--perm-earth-brown);
+}
+
+.period-ancient .timeline-period {
+    background-color: rgba(139, 69, 19, 0.1);
+    color: var(--perm-earth-brown);
+}
+
+.period-ancient .timeline-content::before {
+    border-color: transparent transparent transparent var(--perm-earth-brown);
+}
+
+.period-imperial .timeline-year,
+.period-imperial .timeline-marker {
+    background-color: var(--perm-copper);
+    box-shadow: 0 0 0 4px var(--perm-copper);
+}
+
+.period-imperial .timeline-period {
+    background-color: rgba(184, 115, 51, 0.1);
+    color: var(--perm-copper);
+}
+
+.period-imperial .timeline-content::before {
+    border-color: transparent transparent transparent var(--perm-copper);
+}
+
+.period-soviet .timeline-year,
+.period-soviet .timeline-marker {
+    background-color: var(--perm-soviet-red);
+    box-shadow: 0 0 0 4px var(--perm-soviet-red);
+}
+
+.period-soviet .timeline-period {
+    background-color: rgba(200, 16, 46, 0.1);
+    color: var(--perm-soviet-red);
+}
+
+.period-soviet .timeline-content::before {
+    border-color: transparent transparent transparent var(--perm-soviet-red);
+}
+
+.period-modern .timeline-year,
+.period-modern .timeline-marker {
+    background-color: var(--perm-modern-aqua);
+    box-shadow: 0 0 0 4px var(--perm-modern-aqua);
+}
+
+.period-modern .timeline-period {
+    background-color: rgba(0, 183, 235, 0.1);
+    color: var(--perm-modern-aqua);
+}
+
+.period-modern .timeline-content::before {
+    border-color: transparent transparent transparent var(--perm-modern-aqua);
+}
+
+.timeline-item:nth-child(even).period-ancient .timeline-content::before {
+    border-color: transparent var(--perm-earth-brown) transparent transparent;
+}
+
+.timeline-item:nth-child(even).period-imperial .timeline-content::before {
+    border-color: transparent var(--perm-copper) transparent transparent;
+}
+
+.timeline-item:nth-child(even).period-soviet .timeline-content::before {
+    border-color: transparent var(--perm-soviet-red) transparent transparent;
+}
+
+.timeline-item:nth-child(even).period-modern .timeline-content::before {
+    border-color: transparent var(--perm-modern-aqua) transparent transparent;
+}
+
+.color-palette-section {
+    padding: 80px 0;
+    background-color: white;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 60px;
+    color: var(--perm-deep-blue);
+}
+
+.palettes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.palette {
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+    transition: var(--transition);
+}
+
+.palette:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.palette h3 {
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+    color: var(--perm-deep-blue);
+}
+
+.colors {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.color {
+    width: 50px;
+    height: 50px;
+    border-radius: 8px;
+    flex-shrink: 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.color:hover {
+    transform: scale(1.1);
+}
+
+.footer {
+    background-color: var(--perm-dark-green);
+    color: white;
+    padding: 60px 0 30px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+}
+
+.footer-logo h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: var(--perm-cream);
+}
+
+.students-info {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    border-left: 4px solid var(--perm-modern-aqua);
+}
+
+.students-info p {
+    font-size: 0.95rem;
+    color: var(--perm-cream);
+    font-weight: 500;
+}
+
+.footer-info p {
+    margin-bottom: 15px;
+    opacity: 0.9;
+}
+
+.copyright {
+    margin-top: 30px;
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
+
+.back-to-top {
+    background-color: var(--perm-copper);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 50px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    transition: var(--transition);
+}
+
+.back-to-top i {
+    margin-right: 8px;
+}
+
+.back-to-top:hover {
+    background-color: #a35d2a;
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: 20px;
+}
+
+.modal {
+    background-color: white;
+    border-radius: 16px;
+    max-width: 800px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    animation: modalAppear 0.4s ease-out;
+}
+
+@keyframes modalAppear {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.modal-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--perm-dark-gray);
+    cursor: pointer;
+    z-index: 10;
+    transition: var(--transition);
+}
+
+.modal-close:hover {
+    color: var(--perm-soviet-red);
+}
+
+.modal-content {
+    padding: 50px 40px 40px;
+}
+
+.modal-period {
+    display: inline-block;
+    padding: 8px 20px;
+    border-radius: 25px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+}
+
+.modal-title {
+    font-size: 2.2rem;
+    margin-bottom: 25px;
+    color: var(--perm-deep-blue);
+    line-height: 1.3;
+}
+
+.modal-date {
+    font-size: 1.2rem;
+    color: var(--perm-copper);
+    margin-bottom: 30px;
+    font-weight: 500;
+}
+
+.modal-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+.modal-image {
+    width: 100%;
+    height: 300px;
+    border-radius: 12px;
+    margin: 30px 0;
+    background-size: cover;
+    background-position: center;
+    background-color: #f0f0f0;
+}
+
+@media (max-width: 768px) {
+    .period-nav-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+    
+    .period-filter {
+        min-width: auto;
+        margin: 0;
+        padding: 10px 15px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .period-nav-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .period-filter {
+        width: 100%;
+    }
+}
+
+@media (max-width: 992px) {
+    .main-title {
+        font-size: 2.8rem;
+    }
+    
+    .subtitle {
+        font-size: 1.6rem;
+    }
+    
+    .timeline::before {
+        left: 30px;
+    }
+    
+    .timeline-item {
+        justify-content: flex-start !important;
+        padding-right: 0 !important;
+        padding-left: 80px !important;
+    }
+    
+    .timeline-marker {
+        left: 30px;
+        transform: translateX(-50%);
+    }
+    
+    .timeline-item:nth-child(odd) .timeline-year,
+    .timeline-item:nth-child(even) .timeline-year {
+        left: 80px;
+        right: auto;
+    }
+    
+    .timeline-item:nth-child(odd) .timeline-content::before,
+    .timeline-item:nth-child(even) .timeline-content::before {
+        left: -15px;
+        right: auto;
+        border-width: 10px 15px 10px 0;
+    }
+    
+    .timeline-item .timeline-content::before {
+        left: -15px !important;
+        right: auto !important;
+        border-width: 10px 15px 10px 0 !important;
+    }
+    
+    .period-ancient .timeline-content::before {
+        border-color: transparent var(--perm-earth-brown) transparent transparent !important;
+    }
+    
+    .period-imperial .timeline-content::before {
+        border-color: transparent var(--perm-copper) transparent transparent !important;
+    }
+    
+    .period-soviet .timeline-content::before {
+        border-color: transparent var(--perm-soviet-red) transparent transparent !important;
+    }
+    
+    .period-modern .timeline-content::before {
+        border-color: transparent var(--perm-modern-aqua) transparent transparent !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-title {
+        font-size: 2.2rem;
+    }
+    
+    .subtitle {
+        font-size: 1.3rem;
+    }
+    
+    .header-description {
+        font-size: 1rem;
+    }
+    
+    .period-nav-container {
+        justify-content: flex-start;
+        overflow-x: auto;
+        padding-bottom: 10px;
+    }
+    
+    .period-filter {
+        margin: 5px;
+        white-space: nowrap;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .modal-title {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .header {
+        min-height: 600px;
+    }
+    
+    .main-title {
+        font-size: 1.8rem;
+    }
+    
+    .timeline-content {
+        padding: 20px;
+    }
+    
+    .palettes {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+}

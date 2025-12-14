@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лента времени: История Перми</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐻</text></svg>">
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <h1 class="main-title">
+                    <span class="title-line">История города Перми</span>
+                    <span class="subtitle">От древней стоянки до столицы края</span>
+                </h1>
+                <div class="header-description-container">
+                    <p class="header-description">
+                        История Перми — это яркое отражение истории России, воплощенное в судьбе одного города.
+                        От крошечной стоянки древнего человека до мощного промышленного и культурного центра на Урале —
+                        каждый этап жизни Перми тесно связан с ключевыми процессами, происходившими в стране.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="header-overlay"></div>
+    </header>
+
+    <nav class="period-nav">
+        <div class="container">
+            <div class="period-nav-container">
+                <button class="period-filter active" data-period="all">Все периоды</button>
+                <button class="period-filter" data-period="ancient">Древнее Прикамье</button>
+                <button class="period-filter" data-period="imperial">Имперский период</button>
+                <button class="period-filter" data-period="soviet">Советский период</button>
+                <button class="period-filter" data-period="modern">Современность</button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="timeline-container">
+        <div class="container">
+            <div class="timeline">
+            </div>
+        </div>
+    </main>
+
+    <section class="color-palette-section">
+        <div class="container">
+            <h2 class="section-title">Цветовые палитры истории Перми</h2>
+            <div class="palettes">
+                <div class="palette ancient-palette">
+                    <h3>Древнее Прикамье</h3>
+                    <div class="colors">
+                        <div class="color" style="background-color: #2F4F4F;" title="Тёмно-зелёный - уральские леса">
+                        </div>
+                        <div class="color" style="background-color: #8B4513;"
+                            title="Землисто-коричневый - почва и артефакты"></div>
+                        <div class="color" style="background-color: #1E3F66;" title="Глубокий синий - река Кама"></div>
+                        <div class="color" style="background-color: #FFFDD0;" title="Кремовый - снег и фон"></div>
+                    </div>
+                </div>
+                <div class="palette imperial-palette">
+                    <h3>Горнозаводская цивилизация</h3>
+                    <div class="colors">
+                        <div class="color" style="background-color: #B87333;" title="Медно-красный - медь и плавка">
+                        </div>
+                        <div class="color" style="background-color: #36454F;"
+                            title="Тёмно-серый - железо и промышленность"></div>
+                        <div class="color" style="background-color: #D4AF37;" title="Золотистый - богатство купечества">
+                        </div>
+                    </div>
+                </div>
+                <div class="palette soviet-palette">
+                    <h3>Советский индустриальный век</h3>
+                    <div class="colors">
+                        <div class="color" style="background-color: #C8102E;" title="Красный - революция и труд"></div>
+                        <div class="color" style="background-color: #5C5C5C;"
+                            title="Индустриальный серый - бетон и сталь"></div>
+                        <div class="color" style="background-color: #D3D3D3;" title="Светло-серый - панельные дома">
+                        </div>
+                    </div>
+                </div>
+                <div class="palette modern-palette">
+                    <h3>Современная Пермь</h3>
+                    <div class="colors">
+                        <div class="color" style="background-color: #00B7EB;" title="Бирюзовый - инновации и искусство">
+                        </div>
+                        <div class="color" style="background-color: #4CAF50;" title="Зелёный - парки и экология"></div>
+                        <div class="color" style="background-color: #F5F5DC;"
+                            title="Светло-бежевый - современный дизайн"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>История Перми</h3>
+                    <p>Лента времени от древних времён до современности</p>
+                    <div class="students-info">
+                        <p>Проект создан студентами ПГНИУ</p>
+                    </div>
+                </div>
+                <div class="footer-info">
+                    <p>Сайт создан для изучения богатой истории города Перми. Материалы основаны на исторических
+                        исследованиях и документах.</p>
+                    <p class="copyright">© 2025 Лента времени истории Перми</p>
+                </div>
+                <div class="footer-nav">
+                    <button class="back-to-top">
+                        <i class="fas fa-arrow-up"></i>
+                        Наверх
+                    </button>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="modal-overlay">
+        <div class="modal">
+            <button class="modal-close">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="modal-content">
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

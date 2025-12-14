@@ -1,0 +1,15 @@
+{
+  "name": "perm-history-timeline",
+  "version": "1.0.0",
+  "description": "Интерактивная лента времени истории Перми",
+  "main": "index.html",
+  "scripts": {
+    "start": "live-server --port=3000 --host=localhost"
+  },
+  "dependencies": {
+    "live-server": "^1.2.2"
+  },
+  "keywords": ["Пермь", "история", "лента времени"],
+  "author": "",
+  "license": "ISC"
+}
