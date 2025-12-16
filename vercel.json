@@ -1,0 +1,13 @@
+{
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ],
+  "buildCommand": null,
+  "outputDirectory": ".",
+  "devCommand": "npm run dev",
+  "installCommand": "npm install",
+  "framework": null
+}
