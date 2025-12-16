@@ -1,4 +1,3 @@
-/* Основные стили и сброс */
 * {
     margin: 0;
     padding: 0;
@@ -6,7 +5,6 @@
 }
 
 :root {
-    /* Основные цвета палитры Перми */
     --perm-deep-blue: #1E3F66;      /* Кама */
     --perm-copper: #B87333;         /* Медь */
     --perm-dark-green: #2F4F4F;     /* Тайга */
@@ -19,7 +17,7 @@
     --perm-gold: #D4AF37;           /* Золото купечества */
     --perm-cream: #FFFDD0;          /* Снег */
     --perm-modern-green: #4CAF50;   /* Современная зелень */
-    
+
     --text-dark: #333333;
     --text-light: #ffffff;
     --shadow: rgba(0, 0, 0, 0.1);
@@ -31,6 +29,7 @@ body {
     color: var(--text-dark);
     background-color: var(--perm-light-beige);
     line-height: 1.6;
+    overflow-x: hidden;
 }
 
 h1, h2, h3, h4 {
@@ -44,7 +43,6 @@ h1, h2, h3, h4 {
     margin: 0 auto;
     padding: 0 20px;
 }
-
 
 .header {
     position: relative;
@@ -302,6 +300,33 @@ h1, h2, h3, h4 {
     z-index: 1;
 }
 
+.timeline-period {
+    display: inline-block;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: white;
+}
+
+.period-ancient .timeline-period {
+    background-color: var(--perm-earth-brown);
+}
+
+.period-imperial .timeline-period {
+    background-color: var(--perm-copper);
+}
+
+.period-soviet .timeline-period {
+    background-color: var(--perm-soviet-red);
+}
+
+.period-modern .timeline-period {
+    background-color: var(--perm-modern-aqua);
+    color: var(--text-dark);
+}
+
 .timeline-item:nth-child(odd) .timeline-year {
     right: -20px;
 }
@@ -338,15 +363,6 @@ h1, h2, h3, h4 {
     overflow: hidden;
 }
 
-.timeline-period {
-    display: inline-block;
-    padding: 5px 12px;
-    border-radius: 20px;
-    font-size: 0.85rem;
-    font-weight: 600;
-    margin-bottom: 15px;
-}
-
 .read-more {
     color: var(--perm-deep-blue);
     font-weight: 600;
@@ -375,11 +391,6 @@ h1, h2, h3, h4 {
     box-shadow: 0 0 0 4px var(--perm-earth-brown);
 }
 
-.period-ancient .timeline-period {
-    background-color: rgba(139, 69, 19, 0.1);
-    color: var(--perm-earth-brown);
-}
-
 .period-ancient .timeline-content::before {
     border-color: transparent transparent transparent var(--perm-earth-brown);
 }
@@ -388,11 +399,6 @@ h1, h2, h3, h4 {
 .period-imperial .timeline-marker {
     background-color: var(--perm-copper);
     box-shadow: 0 0 0 4px var(--perm-copper);
-}
-
-.period-imperial .timeline-period {
-    background-color: rgba(184, 115, 51, 0.1);
-    color: var(--perm-copper);
 }
 
 .period-imperial .timeline-content::before {
@@ -405,11 +411,6 @@ h1, h2, h3, h4 {
     box-shadow: 0 0 0 4px var(--perm-soviet-red);
 }
 
-.period-soviet .timeline-period {
-    background-color: rgba(200, 16, 46, 0.1);
-    color: var(--perm-soviet-red);
-}
-
 .period-soviet .timeline-content::before {
     border-color: transparent transparent transparent var(--perm-soviet-red);
 }
@@ -418,11 +419,6 @@ h1, h2, h3, h4 {
 .period-modern .timeline-marker {
     background-color: var(--perm-modern-aqua);
     box-shadow: 0 0 0 4px var(--perm-modern-aqua);
-}
-
-.period-modern .timeline-period {
-    background-color: rgba(0, 183, 235, 0.1);
-    color: var(--perm-modern-aqua);
 }
 
 .period-modern .timeline-content::before {
@@ -450,11 +446,14 @@ h1, h2, h3, h4 {
     background-color: white;
 }
 
-.section-title {
+.section-subtitle {
     text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 60px;
-    color: var(--perm-deep-blue);
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    color: var(--perm-dark-green);
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .palettes {
@@ -495,10 +494,328 @@ h1, h2, h3, h4 {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     cursor: pointer;
     transition: var(--transition);
+    position: relative;
 }
 
 .color:hover {
     transform: scale(1.1);
+}
+
+.color-tooltip {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.85);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    white-space: nowrap;
+    z-index: 100;
+    margin-bottom: 8px;
+    pointer-events: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.color:hover .color-tooltip {
+    opacity: 1;
+    visibility: visible;
+}
+
+.color-tooltip::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 5px solid transparent;
+    border-top-color: rgba(0, 0, 0, 0.85);
+}
+
+.color-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 1100;
+    padding: 20px;
+}
+
+.color-modal {
+    background-color: white;
+    border-radius: 16px;
+    max-width: 500px;
+    width: 100%;
+    position: relative;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    animation: modalAppear 0.4s ease-out;
+    padding: 30px;
+}
+
+.color-modal-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--perm-dark-gray);
+    cursor: pointer;
+    z-index: 10;
+    transition: var(--transition);
+}
+
+.color-modal-close:hover {
+    color: var(--perm-soviet-red);
+}
+
+.color-modal-content {
+    text-align: center;
+}
+
+.color-sample {
+    width: 100px;
+    height: 100px;
+    border-radius: 12px;
+    margin: 0 auto 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+#color-name {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: var(--perm-deep-blue);
+}
+
+#color-reason {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--text-dark);
+}
+
+.quiz-section {
+    padding: 80px 0;
+    background-color: #f9f9f9;
+}
+
+.quiz-container {
+    background-color: white;
+    border-radius: 16px;
+    padding: 40px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.quiz-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.quiz-score, .quiz-progress {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--perm-deep-blue);
+}
+
+.quiz-content {
+    margin-bottom: 30px;
+}
+
+#question-text {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    color: var(--perm-deep-blue);
+    line-height: 1.4;
+}
+
+.quiz-options {
+    display: grid;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.quiz-option {
+    background-color: #f8f9fa;
+    border: 2px solid #e9ecef;
+    border-radius: 10px;
+    padding: 18px 20px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: var(--transition);
+    text-align: left;
+}
+
+.quiz-option:hover {
+    background-color: #e9ecef;
+    transform: translateY(-2px);
+}
+
+.quiz-option.selected {
+    border-color: var(--perm-deep-blue);
+    background-color: rgba(30, 63, 102, 0.05);
+}
+
+.quiz-option.correct {
+    border-color: #4CAF50;
+    background-color: rgba(76, 175, 80, 0.1);
+}
+
+.quiz-option.incorrect {
+    border-color: #f44336;
+    background-color: rgba(244, 67, 54, 0.1);
+}
+
+.quiz-feedback {
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 25px;
+    display: none;
+}
+
+.quiz-feedback.show {
+    display: block;
+}
+
+.quiz-feedback.correct {
+    background-color: rgba(76, 175, 80, 0.1);
+    border: 1px solid #4CAF50;
+    color: #2e7d32;
+}
+
+.quiz-feedback.incorrect {
+    background-color: rgba(244, 67, 54, 0.1);
+    border: 1px solid #f44336;
+    color: #c62828;
+}
+
+.quiz-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.quiz-btn {
+    background-color: var(--perm-deep-blue);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.quiz-btn:hover:not(:disabled) {
+    background-color: #152a4a;
+    transform: translateY(-2px);
+}
+
+.quiz-btn:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+.restart-btn {
+    background-color: var(--perm-copper);
+}
+
+.restart-btn:hover {
+    background-color: #a35d2a;
+}
+
+.quiz-results {
+    text-align: center;
+    padding: 30px;
+    background-color: #f8f9fa;
+    border-radius: 12px;
+    display: none;
+}
+
+.quiz-results.show {
+    display: block;
+    animation: modalAppear 0.4s ease-out;
+}
+
+#results-text {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: var(--perm-deep-blue);
+}
+
+#results-score {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--perm-modern-aqua);
+    margin-bottom: 20px;
+}
+
+#results-message {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.more-info-section {
+    padding: 80px 0;
+    background-color: var(--perm-deep-blue);
+    color: white;
+    text-align: center;
+}
+
+.more-info-content {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.more-info-title {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+    color: var(--perm-cream);
+}
+
+.more-info-description {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+.telegram-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #0088cc;
+    color: white;
+    padding: 18px 35px;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: var(--transition);
+    box-shadow: 0 8px 20px rgba(0, 136, 204, 0.3);
+}
+
+.telegram-btn:hover {
+    background-color: #0077b5;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(0, 136, 204, 0.4);
+}
+
+.telegram-btn i {
+    font-size: 1.5rem;
+    margin-right: 12px;
 }
 
 .footer {
@@ -642,9 +959,24 @@ h1, h2, h3, h4 {
 
 .modal-date {
     font-size: 1.2rem;
-    color: var(--perm-copper);
     margin-bottom: 30px;
     font-weight: 500;
+}
+
+.modal-date.period-ancient {
+    color: var(--perm-earth-brown);
+}
+
+.modal-date.period-imperial {
+    color: var(--perm-copper);
+}
+
+.modal-date.period-soviet {
+    color: var(--perm-soviet-red);
+}
+
+.modal-date.period-modern {
+    color: var(--perm-modern-aqua);
 }
 
 .modal-text {
@@ -653,14 +985,123 @@ h1, h2, h3, h4 {
     margin-bottom: 30px;
 }
 
-.modal-image {
+.modal-image-container {
     width: 100%;
-    height: 300px;
+    height: 350px;
     border-radius: 12px;
     margin: 30px 0;
-    background-size: cover;
-    background-position: center;
-    background-color: #f0f0f0;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.modal-image-container:hover {
+    transform: scale(1.02);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.modal-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.modal-image-container:hover .modal-image {
+    transform: scale(1.05);
+}
+
+.modal-image-container::after {
+    content: '🔍 Нажмите для увеличения';
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.modal-image-container:hover::after {
+    opacity: 1;
+}
+
+.image-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 1100;
+    padding: 20px;
+}
+
+.image-modal {
+    background-color: transparent;
+    max-width: 90%;
+    max-height: 90%;
+    position: relative;
+    animation: imageModalAppear 0.4s ease-out;
+}
+
+@keyframes imageModalAppear {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.image-modal-close {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+    z-index: 10;
+    transition: var(--transition);
+}
+
+.image-modal-close:hover {
+    color: var(--perm-modern-aqua);
+}
+
+.image-modal-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.full-size-image {
+    max-width: 100%;
+    max-height: 80vh;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.image-caption {
+    margin-top: 20px;
+    color: white;
+    font-size: 1.2rem;
+    text-align: center;
+    max-width: 800px;
 }
 
 @media (max-width: 768px) {
@@ -688,6 +1129,7 @@ h1, h2, h3, h4 {
     }
 }
 
+/* Адаптивность */
 @media (max-width: 992px) {
     .main-title {
         font-size: 2.8rem;
@@ -779,6 +1221,49 @@ h1, h2, h3, h4 {
     .modal-title {
         font-size: 1.8rem;
     }
+    
+    .more-info-title {
+        font-size: 1.8rem;
+    }
+    
+    .more-info-description {
+        font-size: 1rem;
+    }
+    
+    .telegram-btn {
+        padding: 15px 25px;
+        font-size: 1rem;
+    }
+    
+    .modal-image-container {
+        height: 250px;
+    }
+    
+    .modal-image-container::after {
+        font-size: 0.8rem;
+        padding: 6px 12px;
+    }
+    
+    .quiz-container {
+        padding: 25px;
+    }
+    
+    #question-text {
+        font-size: 1.3rem;
+    }
+    
+    .quiz-option {
+        padding: 15px;
+        font-size: 1rem;
+    }
+    
+    .quiz-buttons {
+        flex-direction: column;
+    }
+    
+    .quiz-btn {
+        width: 100%;
+    }
 }
 
 @media (max-width: 576px) {
@@ -800,5 +1285,17 @@ h1, h2, h3, h4 {
     
     .footer-content {
         grid-template-columns: 1fr;
+    }
+    
+    .modal-content {
+        padding: 40px 20px 20px;
+    }
+    
+    .modal-image-container {
+        height: 200px;
+    }
+    
+    .colors {
+        justify-content: center;
     }
 }
