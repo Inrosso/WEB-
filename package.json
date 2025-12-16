@@ -4,11 +4,16 @@
   "description": "Интерактивная лента времени истории Перми",
   "main": "index.html",
   "scripts": {
-    "start": "live-server --port=3000 --host=localhost"
+    "start": "live-server --port=3000 --host=localhost",
+    "dev": "live-server --port=3000 --host=localhost",
+    "build": "echo \"📦 Собираем проект...\" && (if not exist dist mkdir dist) && copy index.html dist\\ && copy style.css dist\\ && copy script.js dist\\ && echo \"✅ Сборка завершена! Файлы в папке dist\\\"",
+    "clean": "if exist dist rmdir /s /q dist",
+    "deploy": "npm run build && echo \"🚀 Готово к загрузке! Загрузите папку dist на хостинг\""
   },
   "dependencies": {
     "live-server": "^1.2.2"
   },
+  "devDependencies": {},
   "keywords": ["Пермь", "история", "лента времени"],
   "author": "",
   "license": "ISC"
