@@ -6,7 +6,7 @@ const timelineData = [
         period: "ancient",
         shortDescription: "Самое древнее поселение на территории современной Перми.",
         fullDescription: "В черте города изучено более 130 археологических памятников, самый древний из которых — палеолитическая стоянка «Егошиха» возрастом около 15 тысяч лет до н. э.. Обнаруженные здесь скребки, долотовидные орудия, острия, ножевидные пластины, скобели и резцы свидетельствуют, что древние обитатели этих мест охотились на северных оленей и лошадей. Это было не временное стойбище, а долговременное поселение, жители которого испытывали нехватку сырья и бережно использовали каменные орудия.",
-        image: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-4.0.3&auto=format&fit=crop&w=1474&q=80"
+        image: "assets/Ego.jpg"
     },
     {
         id: 2,
@@ -15,7 +15,7 @@ const timelineData = [
         period: "ancient",
         shortDescription: "Уникальное искусство древних уральских племён.",
         fullDescription: "В VIII—III веках до н. э. в Среднем Прикамье расцвело уникальное явление — «пермский звериный стиль». Мастера из племён ананьинской археологической культуры украшали костяные и роговые гребни, бронзовые пряжки и подвески стилизованными изображениями лосей, медведей, хищных птиц, а позже — волков, собак и змей. Это искусство стало прародителем для последующего творчества пермских народов — коми и удмуртов, сформировавшихся здесь в начале новой эры.",
-        image: "https://images.unsplash.com/photo-1530133532239-eda6f53fcf0f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1374&q=80"
+        image: "assets/steal.webp"
     },
     {
         id: 3,
@@ -24,7 +24,7 @@ const timelineData = [
         period: "imperial",
         shortDescription: "Заложен Егошихинский медеплавильный завод — день рождения города.",
         fullDescription: "История современной Перми началась в ходе масштабных преобразований Петра I. Государству, ведшему Северную войну со Швецией, были остро необходимы новые источники металла. В 1720 году на Урал для строительства заводов был направлен капитан-поручик артиллерии, учёный и сподвижник царя Василий Никитич Татищев. Он выбрал место у слияния полноводной Камы и небольшой речки Егошихи. Выбор был идеален: близость медной руды, судоходной реки для вывоза продукции, удобный узкий и глубокий лог для постройки плотины и богатые лесные массивы для топлива. 4 (15) мая 1723 года состоялась закладка Егошихинского (Ягошихинского) медеплавильного завода, и эта дата считается официальным днём рождения Перми.",
-        image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=1374&q=80"
+        image: "assets/4.jpg"
     },
     {
         id: 4,
@@ -33,7 +33,7 @@ const timelineData = [
         period: "imperial",
         shortDescription: "Пермь стала центром Пермского наместничества по указу Екатерины II.",
         fullDescription: "Следующая судьбоносная веха была связана с Екатериной II. После подавления восстания Емельяна Пугачёва потребовалась административная реформа на Урале. Казанский губернатор князь Платон Мещерский, обследовавший Прикамье в 1778 году, указал на Егошихинский завод как на идеальное место для нового губернского центра благодаря его расположению на Каме и примерному равенству расстояний до Казани и Тобольска. 16 ноября 1780 года императрица подписала указ: «Город губернский для Пермского наместничества назначить в сем месте, наименовав оный город Пермь». 18 октября 1781 года состоялось торжественное открытие города и наместничества. Так искусственно созданный административный центр получил свой высокий статус.",
-        image: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80"
+        image: "assets/5.jpg"
     },
     {
         id: 5,
@@ -42,7 +42,7 @@ const timelineData = [
         period: "imperial",
         shortDescription: "Пермь становится важнейшим транспортным узлом Урала.",
         fullDescription: "В XIX столетии Пермь уверенно наращивала экономическую мощь, став важнейшим транспортным и торговым узлом Урала. Главным товаром была соль, добываемая в Усолье и Соликамске. По Каме и её притоку Чусовой отправляли железо, медь и металлические изделия уральских заводов в центральную Россию. Ключевым событием для развития стало строительство Уральской железной дороги, прошедшей через Пермь в 1878 году. Одновременно развивалась промышленность. В 1858 году в устье речки Данилихи английский подданный Гуллет построил механический завод по производству речных буксиров.",
-        image: "https://images.unsplash.com/photo-1519817914152-22d216bb9170?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80"
+        image: "assets/rail.jpg"
     },
     {
         id: 6,
@@ -51,7 +51,7 @@ const timelineData = [
         period: "soviet",
         shortDescription: "Трагические события Гражданской войны в городе.",
         fullDescription: "Гражданская война обернулась для Перми глубокой трагедией. В ночь с 12 на 13 июня 1918 года в окрестностях города был тайно расстрелян великий князь Михаил Александрович, брат Николая II. Эта расправа, инициированная местными властями, стала символическим актом, поставившим точку в истории династии Романовых, начало которой также было связано с пермской землёй. В декабре 1918 года войска адмирала Александра Колчака в ходе общего наступления белых армий на запад без боя заняли Перми. Это событие, получившее в советской историографии название «Пермская катастрофа», стало крупнейшей победой белых. Однако в июле 1919 года, после перелома в ходе войны, Красная Армия вновь заняла Пермь.",
-        image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=1374&q=80"
+        image: "assets/6.jpg"
     },
     {
         id: 7,
@@ -59,8 +59,8 @@ const timelineData = [
         title: "Переименование в Молотов",
         period: "soviet",
         shortDescription: "Город на 17 лет потерял историческое имя.",
-        fullDescription: "В советский период Пермь стала мощным индустриальным центром. В 1938 году город стал административным центром Пермской области в составе РСФСР. В этот же период город на 17 лет потерял своё историческое имя: 8 марта 1940 года он был переименован в Молотов в честь советского политика Вячеслава Молотова. Это было частью общей тенденции увековечивания имён партийных руководителей. Великая Отечественная война коренным образом изменила облик города. В 1941-1942 годах в Молотовскую область были эвакуированы десятки крупных заводов из европейской части СССР. Город превратился в мощный арсенал, выпускавший моторы, артиллерийские системы, боеприпасы.",
-        image: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80"
+        fullDescription: "В советский период Пермь стал мощным индустриальным центром. В 1938 году город стал административным центром Пермской области в составе РСФСР. В этот же период город на 17 лет потерял своё историческое имя: 8 марта 1940 года он был переименован в Молотов в честь советского политика Вячеслава Молотова. Это было частью общей тенденции увековечивания имён партийных руководителей. Великая Отечественная война коренным образом изменила облик города. В 1941-1942 годах в Молотовскую область были эвакуированы десятки крупных заводов из европейской части СССР. Город превратился в мощный арсенал, выпускавший моторы, артиллерийские системы, боеприпасы.",
+        image: "assets/molotov.jpg"
     },
     {
         id: 8,
@@ -69,7 +69,7 @@ const timelineData = [
         period: "soviet",
         shortDescription: "Городу вернули имя Пермь.",
         fullDescription: "Послевоенные годы продолжилось активное развитие. В 1955 году была построена Камская ГЭС, в 1958 году введена в эксплуатацию первая очередь Пермского нефтеперерабатывающего завода (ныне «Лукойл-Пермнефтеоргсинтез»). Историческое название городу вернули 2 октября 1957 года. В 1967 году завершилось строительство Коммунального моста через Каму, связавшего центр с правобережьем. В 1969 году был построен новый цирк. За успехи в развитии промышленности 22 января 1971 года город Пермь был награждён орденом Ленина.",
-        image: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-4.0.3&auto=format&fit=crop&w=1474&q=80"
+        image: "assets/8.jpg"
     },
     {
         id: 9,
@@ -78,7 +78,7 @@ const timelineData = [
         period: "modern",
         shortDescription: "Пермь стала столицей нового субъекта Федерации.",
         fullDescription: "Новейший этап истории города начался в 2005 году, когда в результате объединения Пермской области и Коми-Пермяцкого автономного округа был образован Пермский край, административным центром которого стала Пермь. Современная Пермь — это крупный промышленный, научный, культурный и логистический центр с населением свыше миллиона человек. Город продолжает развивать свою инфраструктуру, образование и культуру. Восстанавливаются храмы, строятся новые спортивные комплексы и общественные пространства. В 2023 году Пермь торжественно отметила своё 300-летие.",
-        image: "https://images.unsplash.com/photo-1590418606746-018840f9cd0f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+        image: "assets/9.jpg"
     }
 ];
 
@@ -89,13 +89,79 @@ const periods = {
     "modern": "Современность"
 };
 
+const quizQuestions = [
+    {
+        question: "Какой самый древний археологический памятник на территории Перми упоминается на сайте?",
+        options: [
+            "Городище Роданово",
+            "Стоянка древнего человека «Егошиха»",
+            "Поселение Пермь Великая",
+            "Мотовилихинский завод"
+        ],
+        correctAnswer: 1,
+        fact: "Стоянка «Егошиха» датируется возрастом около 15 тысяч лет до н.э. "
+    },
+    {
+        question: "В каком году был основан город Пермь?",
+        options: [
+            "В 1781 году, когда стал губернским центром",
+            "В 1723 году, с закладки медеплавильного завода",
+            "В 1878 году, со строительством железной дороги",
+            "В 1940 году, при переименовании в Молотов"
+        ],
+        correctAnswer: 1,
+        fact: "Официальной датой основания считается 4 (15) мая 1723 года — закладка Егошихинского медеплавильного завода. "
+    },
+    {
+        question: "Какое уникальное явление искусства древних уральских племён расцвело в Среднем Прикамье в VIII-III веках до н.э.?",
+        options: [
+            "Пермская деревянная скульптура",
+            "Ананьинская керамика",
+            "Пермский звериный стиль",
+            "Строгановская иконопись"
+        ],
+        correctAnswer: 2,
+        fact: "«Пермский звериный стиль» — это уникальное бронзовое литьё с изображениями животных и мифологических существ."
+    },
+    {
+        question: "Как назывался город Пермь в 1940-1957 годах?",
+        options: [
+            "Свердловск",
+            "Молотов",
+            "Киров",
+            "Брежнев"
+        ],
+        correctAnswer: 1,
+        fact: "Город был переименован в Молотов в честь советского политика Вячеслава Молотова. Историческое название вернули в 1957 году. "
+    },
+    {
+        question: "Что стало административным центром Пермского края, образованного в 2005 году?",
+        options: [
+            "Кудымкар",
+            "Березники",
+            "Соликамск",
+            "Пермь"
+        ],
+        correctAnswer: 3,
+        fact: "В 2005 году в результате объединения Пермской области и Коми-Пермяцкого автономного округа был создан Пермский край, столицей которого осталась Пермь."
+    }
+];
+
+let currentQuestionIndex = 0;
+let score = 0;
+let userAnswers = [];
+
 
 document.addEventListener('DOMContentLoaded', function() {
     initTimeline();
     initFilters();
     initModal();
+    initImageModal();
+    initColorModal();
     initScrollEffects();
     initBackToTop();
+    initInteractiveColors();
+    initQuiz();
     
     renderTimeline(timelineData);
     
@@ -162,7 +228,7 @@ function initFilters() {
             filterButtons.forEach(btn => btn.classList.remove('active'));
             
             this.classList.add('active');
-
+            
             const selectedPeriod = this.dataset.period;
             
             const timelineSection = document.querySelector('.timeline-container');
@@ -187,6 +253,111 @@ function initFilters() {
             }, 300);
         });
     });
+}
+function initImageModal() {
+    const imageModalOverlay = document.querySelector('.image-modal-overlay');
+    const imageModalClose = document.querySelector('.image-modal-close');
+    
+    imageModalClose.addEventListener('click', closeImageModal);
+    imageModalOverlay.addEventListener('click', function(e) {
+        if (e.target === imageModalOverlay) {
+            closeImageModal();
+        }
+    });
+    
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && imageModalOverlay.style.display === 'flex') {
+            closeImageModal();
+        }
+    });
+}
+
+function initColorModal() {
+    const colorModalOverlay = document.querySelector('.color-modal-overlay');
+    const colorModalClose = document.querySelector('.color-modal-close');
+    
+    colorModalClose.addEventListener('click', closeColorModal);
+    colorModalOverlay.addEventListener('click', function(e) {
+        if (e.target === colorModalOverlay) {
+            closeColorModal();
+        }
+    });
+    
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && colorModalOverlay.style.display === 'flex') {
+            closeColorModal();
+        }
+    });
+}
+
+function initInteractiveColors() {
+    const colors = document.querySelectorAll('.color');
+    
+    colors.forEach(color => {
+        const colorValue = color.getAttribute('data-color');
+        const colorName = color.getAttribute('data-name');
+        const colorReason = color.getAttribute('data-reason');
+        
+        if (colorValue) {
+            color.style.backgroundColor = colorValue;
+            
+            const tooltip = document.createElement('div');
+            tooltip.className = 'color-tooltip';
+            tooltip.textContent = colorName;
+            color.appendChild(tooltip);
+            
+            color.addEventListener('click', function() {
+                openColorModal(colorValue, colorName, colorReason);
+            });
+            
+            color.style.cursor = 'pointer';
+        }
+    });
+}
+
+function openColorModal(colorValue, colorName, colorReason) {
+    const colorModalOverlay = document.querySelector('.color-modal-overlay');
+    const colorSample = document.getElementById('color-sample');
+    const colorNameEl = document.getElementById('color-name');
+    const colorReasonEl = document.getElementById('color-reason');
+    
+    if (colorSample && colorNameEl && colorReasonEl) {
+        colorSample.style.backgroundColor = colorValue;
+        colorNameEl.textContent = colorName;
+        colorReasonEl.textContent = colorReason;
+    }
+    
+    if (colorModalOverlay) {
+        colorModalOverlay.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+    }
+}
+
+function closeColorModal() {
+    const colorModalOverlay = document.querySelector('.color-modal-overlay');
+    if (colorModalOverlay) {
+        colorModalOverlay.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+}
+
+function openImageModal(imageSrc, title) {
+    const imageModalOverlay = document.querySelector('.image-modal-overlay');
+    const fullSizeImage = document.querySelector('.full-size-image');
+    const imageCaption = document.querySelector('.image-caption');
+    
+    fullSizeImage.src = imageSrc;
+    fullSizeImage.alt = title;
+    imageCaption.textContent = title;
+    
+    imageModalOverlay.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+}
+
+function closeImageModal() {
+    const imageModalOverlay = document.querySelector('.image-modal-overlay');
+    imageModalOverlay.style.display = 'none';
+    document.body.style.overflow = 'auto';
 }
 
 function filterTimeline(period) {
@@ -245,10 +416,17 @@ function openModal(event) {
             ${periods[event.period]}
         </span>
         <h2 class="modal-title">${event.title}</h2>
-        <div class="modal-date">${event.year}</div>
-        <div class="modal-image" style="background-image: url('${event.image}')"></div>
+        <div class="modal-date period-${event.period}">${event.year}</div>
+        <div class="modal-image-container">
+            <img src="${event.image}" alt="${event.title}" class="modal-image">
+        </div>
         <div class="modal-text">${event.fullDescription}</div>
     `;
+    
+    const modalImageContainer = modalContent.querySelector('.modal-image-container');
+    modalImageContainer.addEventListener('click', () => {
+        openImageModal(event.image, event.title);
+    });
     
     modalOverlay.style.display = 'flex';
     document.body.style.overflow = 'hidden';
@@ -259,7 +437,6 @@ function closeModal() {
     modalOverlay.style.display = 'none';
     document.body.style.overflow = 'auto';
 }
-
 
 function getPeriodColor(period) {
     const colors = {
@@ -284,8 +461,178 @@ function getPeriodColor(period) {
     return colors[period] || { backgroundColor: '#f0f0f0', color: '#333' };
 }
 
-function initScrollEffects() {
+function initQuiz() {
+    const totalQuestionsEl = document.getElementById('total-questions');
+    const restartBtn = document.getElementById('restart-btn');
+    const resultsRestartBtn = document.getElementById('results-restart-btn');
+    
+    if (totalQuestionsEl) {
+        totalQuestionsEl.textContent = quizQuestions.length;
+    }
+    
+    if (restartBtn) {
+        restartBtn.addEventListener('click', restartQuiz);
+    }
+    
+    if (resultsRestartBtn) {
+        resultsRestartBtn.addEventListener('click', restartQuiz);
+    }
+    
+    loadQuestion();
+}
 
+function loadQuestion() {
+    const question = quizQuestions[currentQuestionIndex];
+    const questionTextEl = document.getElementById('question-text');
+    const optionsContainer = document.querySelector('.quiz-options');
+    const currentQuestionEl = document.getElementById('current-question');
+    const nextBtn = document.getElementById('next-btn');
+    const feedbackEl = document.getElementById('feedback');
+    
+    if (!question || !questionTextEl || !optionsContainer) return;
+    
+    feedbackEl.classList.remove('show', 'correct', 'incorrect');
+    feedbackEl.textContent = '';
+    nextBtn.disabled = true;
+    
+    if (currentQuestionEl) {
+        currentQuestionEl.textContent = currentQuestionIndex + 1;
+    }
+    
+    questionTextEl.textContent = question.question;
+    
+    optionsContainer.innerHTML = '';
+    
+    question.options.forEach((option, index) => {
+        const button = document.createElement('button');
+        button.className = 'quiz-option';
+        button.textContent = option;
+        button.addEventListener('click', () => selectAnswer(index));
+        optionsContainer.appendChild(button);
+    });
+    
+    updateProgress();
+}
+
+function selectAnswer(selectedIndex) {
+    const question = quizQuestions[currentQuestionIndex];
+    const options = document.querySelectorAll('.quiz-option');
+    const feedbackEl = document.getElementById('feedback');
+    const nextBtn = document.getElementById('next-btn');
+    
+    options.forEach(option => {
+        option.style.pointerEvents = 'none';
+    });
+    
+    userAnswers[currentQuestionIndex] = selectedIndex;
+    
+    const isCorrect = selectedIndex === question.correctAnswer;
+    
+    options.forEach((option, index) => {
+        option.classList.remove('selected');
+        
+        if (index === selectedIndex) {
+            option.classList.add('selected');
+        }
+        
+        if (index === question.correctAnswer) {
+            option.classList.add('correct');
+        } else if (index === selectedIndex && !isCorrect) {
+            option.classList.add('incorrect');
+        }
+    });
+    
+    feedbackEl.textContent = isCorrect 
+        ? `Правильно! ${question.fact || ''}` 
+        : `Неверно. Правильный ответ: ${question.options[question.correctAnswer]}. ${question.fact || ''}`;
+    
+    feedbackEl.className = `quiz-feedback show ${isCorrect ? 'correct' : 'incorrect'}`;
+    
+    if (isCorrect) {
+        score++;
+        updateScore();
+    }
+    
+    nextBtn.disabled = false;
+    nextBtn.addEventListener('click', nextQuestion);
+}
+
+function nextQuestion() {
+    currentQuestionIndex++;
+    
+    if (currentQuestionIndex < quizQuestions.length) {
+        loadQuestion();
+    } else {
+        showResults();
+    }
+}
+
+function updateScore() {
+    const scoreEl = document.getElementById('score');
+    if (scoreEl) {
+        scoreEl.textContent = score;
+    }
+}
+
+function updateProgress() {
+}
+
+function showResults() {
+    const quizContent = document.querySelector('.quiz-content');
+    const resultsContainer = document.getElementById('results-container');
+    const resultsScore = document.getElementById('results-score');
+    const resultsMessage = document.getElementById('results-message');
+    const finalScoreEl = document.getElementById('final-score');
+    const maxScoreEl = document.getElementById('max-score');
+    
+    if (!quizContent || !resultsContainer) return;
+    
+    quizContent.style.display = 'none';
+    
+    resultsContainer.classList.add('show');
+    
+    const percentage = Math.round((score / quizQuestions.length) * 100);
+    
+    if (resultsScore) resultsScore.textContent = `${score} / ${quizQuestions.length}`;
+    if (finalScoreEl) finalScoreEl.textContent = score;
+    if (maxScoreEl) maxScoreEl.textContent = quizQuestions.length;
+    
+    let message = '';
+    if (percentage >= 80) {
+        message = 'Молодец! Ты отлично знаешь историю Перми!';
+    } else if (percentage >= 60) {
+        message = 'Молодец! Ты хорошо знаешь основные вехи истории города!';
+    } else if (percentage >= 40) {
+        message = 'Молодец! Ты знаешь историю Перми, но есть куда расти!';
+    } else {
+        message = 'Молодец! Ты начал изучение истории Перми! Попробуй ещё раз!';
+    }
+    
+    if (resultsMessage) resultsMessage.textContent = message;
+}
+
+function restartQuiz() {
+    currentQuestionIndex = 0;
+    score = 0;
+    userAnswers = [];
+    
+    const quizContent = document.querySelector('.quiz-content');
+    const resultsContainer = document.getElementById('results-container');
+    const nextBtn = document.getElementById('next-btn');
+    
+    if (quizContent) quizContent.style.display = 'block';
+    if (resultsContainer) resultsContainer.classList.remove('show');
+    if (nextBtn) {
+        nextBtn.disabled = true;
+        const newNextBtn = nextBtn.cloneNode(true);
+        nextBtn.parentNode.replaceChild(newNextBtn, nextBtn);
+    }
+    
+    updateScore();
+    loadQuestion();
+}
+
+function initScrollEffects() {
     activateScrollAnimation();
     
     window.addEventListener('scroll', activateScrollAnimation);
@@ -326,31 +673,3 @@ function initBackToTop() {
         }
     });
 }
-
-function getRandomImage(category) {
-    const images = {
-        ancient: [
-            'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-4.0.3&auto=format&fit=crop&w=1474&q=80',
-            'https://images.unsplash.com/photo-1530133532239-eda6f53fcf0f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1374&q=80'
-        ],
-        imperial: [
-            'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=1374&q=80',
-            'https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80'
-        ],
-        soviet: [
-            'https://images.unsplash.com/photo-1519817914152-22d216bb9170?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80'
-        ],
-        modern: [
-            'https://images.unsplash.com/photo-1590418606746-018840f9cd0f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80'
-        ]
-    };
-    
-    const categoryImages = images[category] || images.ancient;
-    return categoryImages[Math.floor(Math.random() * categoryImages.length)];
-}
-
-timelineData.forEach(event => {
-    if (!event.image) {
-        event.image = getRandomImage(event.period);
-    }
-});
