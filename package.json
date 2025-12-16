@@ -6,10 +6,9 @@
   "scripts": {
     "start": "live-server --port=3000 --host=localhost",
     "dev": "live-server --port=3000 --host=localhost",
-    "build": "node build.js",
+    "build": "echo '📦 Static site - no build required'",
     "clean": "if exist dist rmdir /s /q dist",
-    "zip": "npm run build && cd dist && powershell Compress-Archive -Path * -DestinationPath ../perm-history-site.zip -Force && echo 📦 Создан архив perm-history-site.zip",
-    "deploy": "npm run build && echo 🚀 Готово! Загрузите папку dist на хостинг"
+    "vercel-build": "echo 'No build step required for static HTML site'"
   },
   "dependencies": {
     "live-server": "^1.2.2"
